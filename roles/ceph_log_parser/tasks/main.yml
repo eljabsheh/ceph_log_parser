@@ -1,0 +1,11 @@
+---
+# tasks file for ceph_log_parser
+- name: write csv header
+  local_action: 
+      module: copy 
+      content: '"Log Level","Search term","Date Interval min.",Count' 
+      dest: "{{ logfile_dest }}"
+
+- name: include filter.yml
+  include_tasks: filter.yml
+  loop: "{{ search }}"

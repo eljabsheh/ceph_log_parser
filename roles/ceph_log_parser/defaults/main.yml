@@ -1,0 +1,15 @@
+---
+# defaults file for ceph_log_parser
+logfile_dest: "{{ inventory_dir }}/example.csv"
+search:
+  - name: WRN
+    log_file: "{{ inventory_dir }}/ceph.log"
+    level: "WRN"
+    pg_line: "slow request"
+    timeinterval: "1"
+  - name: DBG
+    log_file: "{{ inventory_dir }}/ceph.log"
+    level: "DBG"
+    pg_line: "deep-scrub"
+    timeinterval: "10"
+

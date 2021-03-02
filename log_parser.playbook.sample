@@ -1,0 +1,6 @@
+---
+- name: ceph_log_parser
+  hosts: mgmt
+  gather_facts: false
+  roles:
+    - ceph_log_parser
